@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="migxgallery" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
+	<object class="migxGallery" table="migx_gallery" extends="xPDOSimpleObject">
+		<field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
+		<field key="description" dbtype="text" phptype="string" index="fulltext" />
+        <field key="resource_id" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+        <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        
+		<field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+		<field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+		<field key="createdon" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="editedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+		<field key="editedon" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
+		<field key="deletedon" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="deletedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+		<field key="publishedon" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="publishedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+			<column key="id" collation="A" null="false" />
+		</index>
+        
+        <aggregate alias="Resource" class="modResource" local="resource_id" foreign="id" cardinality="one" owner="foreign" />
+        <aggregate alias="Creator" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
+	</object>
+    
+</model>
