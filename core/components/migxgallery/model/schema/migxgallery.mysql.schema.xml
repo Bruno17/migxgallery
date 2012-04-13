@@ -4,7 +4,10 @@
 		<field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" index="index" />
 		<field key="description" dbtype="text" phptype="string" index="fulltext" />
         <field key="resource_id" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+        <field key="resource_ids" dbtype="text" phptype="string" null="false" default="" />
         <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="extended" dbtype="text" phptype="json" null="false" default="" />
+        <field key="pos" dbtype="int" precision="10" phptype="integer" null="false" default="0" />        
         
 		<field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 		<field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />

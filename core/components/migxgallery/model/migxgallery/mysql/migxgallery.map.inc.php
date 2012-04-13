@@ -7,7 +7,10 @@ $xpdo_meta_map['migxGallery']= array (
     'title' => '',
     'description' => NULL,
     'resource_id' => 0,
+    'resource_ids' => '',
     'image' => '',
+    'extended' => '',
+    'pos' => 0,
     'published' => 0,
     'createdby' => 0,
     'createdon' => NULL,
@@ -44,6 +47,13 @@ $xpdo_meta_map['migxGallery']= array (
       'null' => false,
       'default' => 0,
     ),
+    'resource_ids' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
     'image' => 
     array (
       'dbtype' => 'varchar',
@@ -51,6 +61,21 @@ $xpdo_meta_map['migxGallery']= array (
       'phptype' => 'string',
       'null' => false,
       'default' => '',
+    ),
+    'extended' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'json',
+      'null' => false,
+      'default' => '',
+    ),
+    'pos' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
     ),
     'published' => 
     array (
